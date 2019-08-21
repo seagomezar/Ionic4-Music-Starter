@@ -1,14 +1,37 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+<ion-content padding>
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide>
+      <ion-icon name="close"></ion-icon>
+      <img src="assets/img/logo.png" alt="Platzi Music Logo" />
+      <h1>Escucha tu música</h1>
+      <h2>EN CUALQUIER LUGAR</h2>
+      <p>
+        Los mejores álbumes, las mejores canciones. Escucha y comparte en
+        cualquier momento, a todas horas.
+      </p>
+      <ion-icon name="play"></ion-icon>
+    </ion-slide>
+    <ion-slide>
+      <ion-icon name="close"></ion-icon>
+      <img src="assets/img/logo.png" alt="Platzi Music Logo" />
+      <h1>Disfruta de nuestro reproductor</h1>
+      <h2>DE VIDEOS INCREÍBLES</h2>
+      <p>
+        Entra al modo video de nuestro reproductor y obtén acceso a clips,
+        documentales y making offs incríbles de tu artista favorito.
+      </p>
+      <ion-icon name="videocam"></ion-icon>
+    </ion-slide>
+    <ion-slide>
+      <ion-icon name="close"></ion-icon>
+      <img src="assets/img/logo.png" alt="Platzi Music Logo" />
+      <h1>Accede al exclusivo</h1>
+      <h2>MODO DEPORTE</h2>
+      <p>
+        Crea una playlist basada en tu actividad física. <br />
+        Ten reportes y acceso a lo que necesites, integrado ccon GPS!
+      </p>
+      <ion-icon name="bicycle"></ion-icon>
+    </ion-slide>
+  </ion-slides>
 </ion-content>
