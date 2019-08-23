@@ -10,4 +10,9 @@ export class AuthenticateService {
       accept("Login Ok!");
     });
   }
+  registerUser(value) {
+    return new Promise<any>((accept, reject) => {
+      accept();
+    });
+  }
 }

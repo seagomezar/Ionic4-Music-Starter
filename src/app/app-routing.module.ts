@@ -16,6 +16,10 @@ const routes: Routes = [
     path: "login",
     loadChildren: "./login/login.module#LoginPageModule",
     canActivate: [IntroGuard]
+  },
+  {
+    path: "register",
+    loadChildren: "./register/register.module#RegisterPageModule"
   }
 ];
 
