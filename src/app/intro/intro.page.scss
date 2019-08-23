@@ -1,0 +1,39 @@
+ion-content {
+  --background: #abd16e;
+  font-family: "Times New Roman", Times, serif;
+}
+ion-slides {
+  background-color: white;
+  height: calc(100% - 32px);
+  max-width: 800px;
+  margin: 16px 16px 0px 16px;
+}
+.swiper-slide {
+  display: block;
+  margin-bottom: 64px;
+  background-color: white;
+}
+ion-slide > h1,
+h2 {
+  margin: 0 0 0 0;
+  color: var(--ion-color-primary);
+}
+ion-slide > p {
+  font-style: italic;
+  font-size: 22px;
+  padding: 1em 1em 1em 1em;
+}
+ion-slide > ion-icon {
+  color: #abd16e;
+  font-size: 48px;
+}
+ion-slide > ion-icon[name="close"] {
+  float: right;
+  color: var(--ion-color-primary);
+  font-size: 48px;
+}
+ion-slide > img {
+  max-height: 50%;
+  max-width: 60%;
+  margin: 64px 0;
+}
