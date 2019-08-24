@@ -53,17 +53,21 @@ export class LoginPage {
     ]
   };
 
-  async loginUser(value) {
-    this.authService.loginUser(value).then(
-      res => {
-        this.errorMessage = "";
-        this.storage.set("isLogged", true);
-        this.navCtrl.navigateForward("/home");
-      },
-      err => {
-        this.errorMessage = err.message;
-      }
-    );
+  loginUser(value) {
+    this.authService
+      .loginUser(value)
+      .then(user => {
+        if (user) {
+          this.errorMessage = "";
+          this.storage.set("isLogged", true);
+          this.navCtrl.navigateForward("/home");
+        } else {
+          this.errorMessage = "Usuario no existe";
+        }
+      })
+      .catch(error => {
+        this.errorMessage = error;
+      });
   }
 
   goToRegisterPage() {
