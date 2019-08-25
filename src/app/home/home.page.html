@@ -1,5 +1,10 @@
 <ion-header>
   <ion-toolbar text-center>
+    <ion-buttons slot="start">
+      <ion-avatar class="header-avatar">
+        <img src="assets/img/user.jpg" alt="User Image" />
+      </ion-avatar>
+    </ion-buttons>
     <ion-buttons slot="end">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -12,7 +17,7 @@
   <h1>Artistas</h1>
   <ion-slides [options]="slideOpts" *ngIf="artists.length">
     <ion-slide *ngFor="let album of artists">
-      <ion-avatar>
+      <ion-avatar class="album-avatar">
         <img width="90px" [src]="album.images[0].url" />
         <span>{{ album.name }}</span>
       </ion-avatar>
@@ -21,7 +26,7 @@
   <h1>Lanzamientos</h1>
   <ion-slides [options]="slideOpts" *ngIf="newReleases.length">
     <ion-slide *ngFor="let album of newReleases">
-      <ion-avatar class="square-avatar">
+      <ion-avatar class="album-avatar square-avatar">
         <img width="90px" [src]="album.images[0].url" />
         <span>{{ album.name }}</span>
       </ion-avatar>
@@ -30,7 +35,7 @@
   <h1>Favoritos</h1>
   <ion-slides [options]="slideOpts" *ngIf="favorites.length">
     <ion-slide *ngFor="let album of favorites">
-      <ion-avatar class="square-avatar">
+      <ion-avatar class="album-avatar square-avatar">
         <img width="90px" [src]="album.images[0].url" />
         <span>{{ album.name }}</span>
       </ion-avatar>

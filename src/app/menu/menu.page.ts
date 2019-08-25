@@ -32,7 +32,7 @@ export class MenuPage {
     },
     {
       title: "Configuraciones",
-      url: "/menu/configuraciones",
+      url: "/menu/settings",
       icon: "settings"
     }
   ];

@@ -13,8 +13,25 @@ const routes: Routes = [
     component: MenuPage,
     children: [
       {
-        path: "home",
-        loadChildren: "../home/home.module#HomePageModule"
+        path: "tabs",
+        loadChildren: "../tabs/tabs.module#TabsPageModule"
+      },
+      {
+        path: "messages",
+        loadChildren: "../messages/messages.module#MessagesPageModule"
+      },
+      {
+        path: "notifications",
+        loadChildren:
+          "../notifications/notifications.module#NotificationsPageModule"
+      },
+      {
+        path: "places",
+        loadChildren: "../places/places.module#PlacesPageModule"
+      },
+      {
+        path: "settings",
+        loadChildren: "../settings/settings.module#SettingsPageModule"
       }
     ]
   }
