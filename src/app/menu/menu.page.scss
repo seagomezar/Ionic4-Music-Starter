@@ -1,0 +1,26 @@
+.header-md:after {
+  background-image: none;
+}
+ion-toolbar,
+ion-header,
+ion-title,
+ion-buttons {
+  height: 80px;
+}
+
+.header-ios ion-toolbar {
+  --border-width: 0;
+}
+
+ion-list {
+  background-color: var(--ion-color-primary);
+}
+ion-item {
+  height: 60px;
+}
+
+.title-ios {
+  padding-left: 20px;
+  text-align: left;
+  font-size: 20px;
+}

@@ -4,13 +4,7 @@ import { IntroGuard } from "./guards/intro.guard";
 import { LoginGuard } from "./guards/login.guard";
 
 const routes: Routes = [
-  { path: "", redirectTo: "home", pathMatch: "full" },
-  {
-    path: "home",
-    loadChildren: () =>
-      import("./home/home.module").then(m => m.HomePageModule),
-    canActivate: [LoginGuard, IntroGuard]
-  },
+  { path: "", redirectTo: "login", pathMatch: "full" },
   { path: "intro", loadChildren: "./intro/intro.module#IntroPageModule" },
   {
     path: "login",
@@ -20,6 +14,11 @@ const routes: Routes = [
   {
     path: "register",
     loadChildren: "./register/register.module#RegisterPageModule"
+  },
+  {
+    path: "menu",
+    loadChildren: "./menu/menu.module#MenuPageModule",
+    canActivate: [LoginGuard, IntroGuard]
   }
 ];
 
