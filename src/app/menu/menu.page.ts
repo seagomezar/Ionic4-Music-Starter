@@ -49,6 +49,7 @@ export class MenuPage {
 
   async logout() {
     await this.storage.set("isLogged", false);
+    this.storage.remove("currentUser");
     this.navCtrl.navigateRoot("login");
   }
 }

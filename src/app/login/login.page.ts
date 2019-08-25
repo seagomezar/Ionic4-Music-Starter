@@ -60,6 +60,7 @@ export class LoginPage {
         if (user) {
           this.errorMessage = "";
           this.storage.set("isLogged", true);
+          this.storage.set("currentUser", user);
           this.navCtrl.navigateForward("/menu/tabs/home");
         } else {
           this.errorMessage = "Usuario no existe";

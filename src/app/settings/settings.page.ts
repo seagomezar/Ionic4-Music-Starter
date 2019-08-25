@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from "@angular/core";
+import { Storage } from "@ionic/storage";
+import { NavController } from "@ionic/angular";
 
 @Component({
-  selector: 'app-settings',
-  templateUrl: './settings.page.html',
-  styleUrls: ['./settings.page.scss'],
+  selector: "app-settings",
+  templateUrl: "./settings.page.html",
+  styleUrls: ["./settings.page.scss"]
 })
-export class SettingsPage implements OnInit {
+export class SettingsPage {
+  user: any;
+  constructor(private storage: Storage, private navCtrl: NavController) {}
 
-  constructor() { }
-
-  ngOnInit() {
+  ionViewWillEnter() {
+    this.storage.get("currentUser").then(value => {
+      this.user = value;
+    });
   }
 
+  goHome() {
+    this.navCtrl.navigateBack("/menu/tabs/home");
+  }
 }
