@@ -3,11 +3,37 @@
     <ion-buttons slot="end">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>
-      Home
+    <ion-title text-center>
+      <img src="assets/img/logo.png" alt="Platzi Logo" height="32px" />
     </ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content padding>
-  <h1>Felicidades has terminado el tutorial</h1>
+  <h1>Artistas</h1>
+  <ion-slides [options]="slideOpts" *ngIf="artists.length">
+    <ion-slide *ngFor="let album of artists">
+      <ion-avatar>
+        <img width="90px" [src]="album.images[0].url" />
+        <span>{{ album.name }}</span>
+      </ion-avatar>
+    </ion-slide>
+  </ion-slides>
+  <h1>Lanzamientos</h1>
+  <ion-slides [options]="slideOpts" *ngIf="newReleases.length">
+    <ion-slide *ngFor="let album of newReleases">
+      <ion-avatar class="square-avatar">
+        <img width="90px" [src]="album.images[0].url" />
+        <span>{{ album.name }}</span>
+      </ion-avatar>
+    </ion-slide>
+  </ion-slides>
+  <h1>Favoritos</h1>
+  <ion-slides [options]="slideOpts" *ngIf="favorites.length">
+    <ion-slide *ngFor="let album of favorites">
+      <ion-avatar class="square-avatar">
+        <img width="90px" [src]="album.images[0].url" />
+        <span>{{ album.name }}</span>
+      </ion-avatar>
+    </ion-slide>
+  </ion-slides>
 </ion-content>
