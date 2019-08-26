@@ -24,6 +24,7 @@ export class HomePage {
   playing: boolean = false;
   dataReturned: any;
   songName: any;
+  currentSong: any = {};
   constructor(
     private musicService: PlatziMusicService,
     public modalController: ModalController
@@ -34,11 +35,11 @@ export class HomePage {
       this.newReleases = this.favorites = newReleases.albums.items;
     });
     this.artists = this.musicService.getArtists();
-    console.log(this.artists);
   }
   play(song) {
-    this.song = new Audio(song.preview_url);
-    this.song.addEventListener("timeupdate", time => {
+    const previewUrl = song ? song.preview_url : this.currentSong.preview_url;
+    this.song = new Audio(previewUrl);
+    this.song.addEventListener("timeupdate", () => {
       this.newTime = (this.song.currentTime * (this.song.duration / 10)) / 100;
     });
     this.song.play();
@@ -81,6 +82,7 @@ export class HomePage {
       return minutes + ":" + seconds;
     }
   }
+
   async showSongs(artist) {
     const songs = await this.musicService.getArtistTopTracks(artist.id);
     const modal = await this.modalController.create({
@@ -98,11 +100,11 @@ export class HomePage {
           //Play a la canción!
           this.newTime = 0;
           this.reset();
-          this.songName = this.dataReturned.name;
+          this.currentSong = this.dataReturned;
           // delayIntencional
           setTimeout(() => {
             this.play(this.dataReturned);
-          }, 1000);
+          }, 500);
         }
       }
     });

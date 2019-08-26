@@ -71,7 +71,7 @@
         ></ion-icon>
       </ion-col>
       <ion-col class="ion-text-center song-title" size="8">
-        <h2>{{ songName }}</h2>
+        <h2>{{ this.currentSong.name }}</h2>
       </ion-col>
       <ion-col class="ion-text-end" size="3">
         <ion-icon name="play" color="success" (click)="play()" *ngIf="!playing">
