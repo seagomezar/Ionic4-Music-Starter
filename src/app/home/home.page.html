@@ -23,7 +23,7 @@
       </ion-avatar>
     </ion-slide>
   </ion-slides>
-  <h1>Lanzamientos</h1>
+  <h1 *ngIf="newReleases.length">Lanzamientos</h1>
   <ion-slides [options]="slideOpts" *ngIf="newReleases.length">
     <ion-slide *ngFor="let album of newReleases">
       <ion-avatar class="album-avatar square-avatar">
@@ -32,12 +32,62 @@
       </ion-avatar>
     </ion-slide>
   </ion-slides>
-  <h1>Favoritos</h1>
+  <h1 *ngIf="!newReleases.length">
+    <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+  </h1>
+  <ion-slides [options]="slideOpts" *ngIf="!newReleases.length">
+    <ion-slide>
+      <ion-avatar class="album-avatar square-avatar">
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-avatar>
+    </ion-slide>
+    <ion-slide>
+      <ion-avatar class="album-avatar square-avatar">
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-avatar>
+    </ion-slide>
+    <ion-slide>
+      <ion-avatar class="album-avatar square-avatar">
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-avatar>
+    </ion-slide>
+    <ion-slide>
+      <ion-avatar class="album-avatar square-avatar">
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-avatar>
+    </ion-slide>
+  </ion-slides>
+  <h1 *ngIf="favorites.length">Favoritos</h1>
   <ion-slides [options]="slideOpts" *ngIf="favorites.length">
     <ion-slide *ngFor="let album of favorites">
       <ion-avatar class="album-avatar square-avatar">
         <img width="90px" [src]="album.images[0].url" />
         <span>{{ album.name }}</span>
+      </ion-avatar>
+    </ion-slide>
+  </ion-slides>
+  <h1 *ngIf="!favorites.length">
+    <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+  </h1>
+  <ion-slides [options]="slideOpts" *ngIf="!favorites.length">
+    <ion-slide>
+      <ion-avatar class="album-avatar square-avatar">
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-avatar>
+    </ion-slide>
+    <ion-slide>
+      <ion-avatar class="album-avatar square-avatar">
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-avatar>
+    </ion-slide>
+    <ion-slide>
+      <ion-avatar class="album-avatar square-avatar">
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-avatar>
+    </ion-slide>
+    <ion-slide>
+      <ion-avatar class="album-avatar square-avatar">
+        <ion-skeleton-text animated></ion-skeleton-text>
       </ion-avatar>
     </ion-slide>
   </ion-slides>

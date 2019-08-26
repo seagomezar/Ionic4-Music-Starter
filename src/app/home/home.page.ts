@@ -10,7 +10,7 @@ import { ModalController, LoadingController } from "@ionic/angular";
 })
 export class HomePage {
   slideOpts = {
-    initialSlide: 2,
+    initialSlide: 3,
     slidesPerView: 4,
     centeredSlides: true,
     speed: 400
