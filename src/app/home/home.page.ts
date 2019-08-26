@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { PlatziMusicService } from "../services/platzi-music.service";
 import { SongsModalPage } from "../songs-modal/songs-modal.page";
-import { ModalController } from "@ionic/angular";
+import { ModalController, LoadingController } from "@ionic/angular";
 
 @Component({
   selector: "app-home",
@@ -27,7 +27,8 @@ export class HomePage {
   currentSong: any = {};
   constructor(
     private musicService: PlatziMusicService,
-    public modalController: ModalController
+    public modalController: ModalController,
+    public loadingController: LoadingController
   ) {}
 
   ionViewDidEnter() {
@@ -84,6 +85,10 @@ export class HomePage {
   }
 
   async showSongs(artist) {
+    const loading = await this.loadingController.create({
+      message: "Cargando las canciones del artista"
+    });
+    await loading.present();
     const songs = await this.musicService.getArtistTopTracks(artist.id);
     const modal = await this.modalController.create({
       component: SongsModalPage,
@@ -92,6 +97,7 @@ export class HomePage {
         artist: artist.name
       }
     });
+    loading.dismiss();
 
     modal.onDidDismiss().then(dataReturned => {
       if (dataReturned !== null) {
@@ -104,7 +110,7 @@ export class HomePage {
           // delayIntencional
           setTimeout(() => {
             this.play(this.dataReturned);
-          }, 500);
+          }, 200);
         }
       }
     });
