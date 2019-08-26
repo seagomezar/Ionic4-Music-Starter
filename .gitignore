@@ -12,8 +12,7 @@ log.txt
 .vscode/
 npm-debug.log*
 
-environments/environment.ts
-environments/environment.prod.ts
+
 
 .idea/
 .ionic/
@@ -29,6 +28,8 @@ tmp/
 temp/
 platforms/
 plugins/
+environments/environment.ts
+environments/environment.prod.ts
 plugins/android.json
 plugins/ios.json
 $RECYCLE.BIN/
