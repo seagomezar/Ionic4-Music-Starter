@@ -16,10 +16,10 @@
 <ion-content padding>
   <h1>Artistas</h1>
   <ion-slides [options]="slideOpts" *ngIf="artists.length">
-    <ion-slide *ngFor="let album of artists">
-      <ion-avatar class="album-avatar">
-        <img width="90px" [src]="album.images[0].url" />
-        <span>{{ album.name }}</span>
+    <ion-slide *ngFor="let artist of artists">
+      <ion-avatar class="album-avatar" (click)="showSongs(artist)">
+        <img width="90px" [src]="artist.images[0].url" />
+        <span>{{ artist.name }}</span>
       </ion-avatar>
     </ion-slide>
   </ion-slides>
@@ -71,7 +71,7 @@
         ></ion-icon>
       </ion-col>
       <ion-col class="ion-text-center song-title" size="8">
-        <h2>Lorem ipsum dolor sit amet</h2>
+        <h2>{{ songName }}</h2>
       </ion-col>
       <ion-col class="ion-text-end" size="3">
         <ion-icon name="play" color="success" (click)="play()" *ngIf="!playing">

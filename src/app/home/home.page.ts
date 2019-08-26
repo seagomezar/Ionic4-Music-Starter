@@ -1,5 +1,7 @@
 import { Component } from "@angular/core";
 import { PlatziMusicService } from "../services/platzi-music.service";
+import { SongsModalPage } from "../songs-modal/songs-modal.page";
+import { ModalController } from "@ionic/angular";
 
 @Component({
   selector: "app-home",
@@ -20,18 +22,22 @@ export class HomePage {
   newTime: number = 0;
   pausedTime: number = 0;
   playing: boolean = false;
-  constructor(private musicService: PlatziMusicService) {}
+  dataReturned: any;
+  songName: any;
+  constructor(
+    private musicService: PlatziMusicService,
+    public modalController: ModalController
+  ) {}
 
   ionViewDidEnter() {
     this.musicService.getNewReleases().then(newReleases => {
-      this.newReleases = this.artists = this.favorites =
-        newReleases.albums.items;
+      this.newReleases = this.favorites = newReleases.albums.items;
     });
-    this.song = new Audio(
-      "https://p.scdn.co/mp3-preview/da32446269129ed4b4dd522169003c49ecd16bb4?cid=555776939cf64ea6b39915cf4d5d875d"
-    );
+    this.artists = this.musicService.getArtists();
+    console.log(this.artists);
   }
-  play() {
+  play(song) {
+    this.song = new Audio(song.preview_url);
     this.song.addEventListener("timeupdate", time => {
       this.newTime = (this.song.currentTime * (this.song.duration / 10)) / 100;
     });
@@ -40,12 +46,17 @@ export class HomePage {
     this.playing = true;
   }
   pause() {
-    this.song.pause();
+    if (this.song) {
+      this.song.pause();
+    }
+
     this.pausedTime = this.song.currentTime;
     this.playing = false;
   }
   reset() {
-    this.song.pause();
+    if (this.playing) {
+      this.song.pause();
+    }
     this.newTime = this.pausedTime = this.song.currentTime = 0;
     this.playing = false;
   }
@@ -56,7 +67,46 @@ export class HomePage {
     this.song.favourite = false;
   }
   parseTime(time = "0.00") {
-    const partTime = time.toString().split(".");
-    return partTime[0] + ":" + partTime[1].slice(0, 2);
+    if (time) {
+      const partTime = parseInt(time.toString().split(".")[0], 10);
+
+      let minutes = Math.floor(partTime / 60).toString();
+      if (minutes.length == 1) {
+        minutes = "0" + minutes;
+      }
+      let seconds = (partTime % 60).toString();
+      if (seconds.length == 1) {
+        seconds = "0" + seconds;
+      }
+      return minutes + ":" + seconds;
+    }
+  }
+  async showSongs(artist) {
+    const songs = await this.musicService.getArtistTopTracks(artist.id);
+    const modal = await this.modalController.create({
+      component: SongsModalPage,
+      componentProps: {
+        songs: songs.tracks,
+        artist: artist.name
+      }
+    });
+
+    modal.onDidDismiss().then(dataReturned => {
+      if (dataReturned !== null) {
+        this.dataReturned = dataReturned.data;
+        if (dataReturned) {
+          //Play a la canción!
+          this.newTime = 0;
+          this.reset();
+          this.songName = this.dataReturned.name;
+          // delayIntencional
+          setTimeout(() => {
+            this.play(this.dataReturned);
+          }, 1000);
+        }
+      }
+    });
+
+    return await modal.present();
   }
 }
