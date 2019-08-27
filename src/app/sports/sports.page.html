@@ -17,9 +17,10 @@
   <agm-map
     [latitude]="currentCenter.lat"
     [longitude]="currentCenter.lng"
-    [zoom]="14"
+    [zoom]="defaultZoom"
+    *ngIf="currentCenter"
   >
-    <agm-polyline [strokeColor]="'red'">
+    <agm-polyline [strokeColor]="'red'" *ngIf="coordinates">
       <agm-polyline-point
         *ngFor="let coords of coordinates"
         [latitude]="coords.lat"
