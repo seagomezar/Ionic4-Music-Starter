@@ -11,8 +11,9 @@
 
 <ion-content text-center>
   <div *ngIf="user" class="success-background">
-    <ion-avatar>
-      <img src="assets/img/user.jpg" alt="User Image" />
+    <ion-avatar (click)="takePicture()">
+      <img [src]="userImage" alt="User Image" *ngIf="!photo" />
+      <img [src]="photo" alt="User Image" *ngIf="photo" />
     </ion-avatar>
     <h1 text-center>{{ user.firstname + " " + user.lastname }}</h1>
     <h2 text-center>{{ user.email }}</h2>
