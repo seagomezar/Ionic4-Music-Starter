@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { PlatziMusicService } from "../services/platzi-music.service";
+import { MusicService } from "../services/music.service";
 import { SongsModalPage } from "../songs-modal/songs-modal.page";
 import { ModalController, LoadingController } from "@ionic/angular";
 
@@ -26,7 +26,7 @@ export class HomePage {
   songName: any;
   currentSong: any = {};
   constructor(
-    private musicService: PlatziMusicService,
+    private musicService: MusicService,
     public modalController: ModalController,
     public loadingController: LoadingController
   ) {}
@@ -64,9 +64,11 @@ export class HomePage {
   }
   markAsFavourite() {
     this.song.favourite = true;
+    // Implement some backend logic here
   }
   markAsNonFavourite() {
     this.song.favourite = false;
+    // Implement some backend logic here
   }
   parseTime(time = "0.00") {
     if (time) {

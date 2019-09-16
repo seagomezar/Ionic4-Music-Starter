@@ -4,7 +4,7 @@ import * as dataArtists from "./artists.json";
 @Injectable({
   providedIn: "root"
 })
-export class PlatziMusicService {
+export class MusicService {
   constructor() {}
 
   getNewReleases() {

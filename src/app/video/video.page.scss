@@ -1,0 +1,15 @@
+ion-content {
+  --background: #000;
+}
+.rowSection {
+  height: 88%;
+  width: 100%;
+  iframe {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 768px) {
+  iframe {
+    height: 400px;
+  }
+}

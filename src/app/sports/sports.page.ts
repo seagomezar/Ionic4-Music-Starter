@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { Plugins } from "@capacitor/core";
-import { PlatziMusicService } from "../services/platzi-music.service";
+import { MusicService } from "../services/music.service";
 
 const { Geolocation } = Plugins;
 
@@ -17,7 +17,7 @@ export class SportsPage {
   searchTerm: string = "";
   searching = false;
   audioSong: HTMLAudioElement;
-  constructor(private musicService: PlatziMusicService) {}
+  constructor(private musicService: MusicService) {}
 
   ionViewDidEnter() {
     this.getCurrentPosition();

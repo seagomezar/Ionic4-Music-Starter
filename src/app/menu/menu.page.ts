@@ -11,26 +11,6 @@ import { NavController, MenuController } from "@ionic/angular";
 export class MenuPage {
   pages = [
     {
-      title: "Mensajes",
-      url: "/menu/mensajes",
-      icon: "mail-open"
-    },
-    {
-      title: "Notificaciones",
-      url: "/menu/notificaciones",
-      icon: "notifications"
-    },
-    {
-      title: "Videos",
-      url: "/menu/videos",
-      icon: "videocam"
-    },
-    {
-      title: "Lugares",
-      url: "/menu/lugares",
-      icon: "pin"
-    },
-    {
       title: "Configuraciones",
       url: "/menu/settings",
       icon: "settings"
