@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+ — "11.2.0"
+branches:
+ only:
+ — master
+before_script:
+ — npm install -g ionic
+script:
+ — ionic build --prod
+deploy:
+ provider: pages
+ skip-cleanup: true
+ github-token: $GITHUB_TOKEN
+ keep-history: true
+ on:
+   branch: master
+ local_dir: www
