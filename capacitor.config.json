@@ -1,7 +1,0 @@
-{
-  "appId": "com.platzimusic.preparation",
-  "appName": "Platzi Music Preparation",
-  "bundledWebRuntime": false,
-  "npmClient": "npm",
-  "webDir": "www"
-}
