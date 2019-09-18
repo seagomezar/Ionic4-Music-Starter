@@ -1,8 +1,4 @@
 language: node_js
 node_js: — "11.0.0"
-install: 
- — npm install -g ionic
- - npm install
- script:
- — ionic build --prod
- 
+install: — npm install -g ionic
+  - npm install
