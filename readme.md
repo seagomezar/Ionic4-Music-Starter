@@ -1,6 +1,6 @@
 # Ionic 4 Music App starter
 
-![](https://github.com/seagomezar/Ionic4-Music-Starter/blob/master/src/assets/img/logo.png =150x)
+![](https://github.com/seagomezar/Ionic4-Music-Starter/blob/master/src/assets/img/logo.png =150px)
 
 [![Build Status](https://travis-ci.org/seagomezar/Ionic4-Music-Starter.svg?branch=master)](https://travis-ci.org/seagomezar/Ionic4-Music-Starter)
 ![](https://img.shields.io/github/stars/seagomezar/Ionic4-Music-Starter)
@@ -11,7 +11,9 @@
 
 ## How to use this starter?
 
-If you only want to use this starter, you can download from [Ionic Starter Page](https://market.ionicframework.com/starters/ionic4-music-starter) but please please 🙏 please give me an start in the repo, I would love it and you will motivate me to keep improving this starter, any advice or suggestion is very welecome throught comments or Pull Requests. ❤️
+If you only want to use this starter, you can download from [Ionic Starter Page](https://market.ionicframework.com/starters/ionic4-music-starter) but please please 🙏 please give me an start in the repo, I would love it and you will motivate me to keep improving this starter,any advice or suggestion is very welecome throught comments or Pull Requests. ❤️
+
+You can see the demo [here](https://seagomezar.github.io/Ionic4-Music-Starter/)
 
 ## Motivation
 
