@@ -13,6 +13,30 @@ If you only want to use this starter, you can download from [Ionic Starter Page]
 
 You can see the demo [here](https://seagomezar.github.io/Ionic4-Music-Starter/)
 
+## Development
+
+After you have cloned the repo you need to have installed the last version if Ionic in your machine:
+
+```sh
+npm install -g ionic
+```
+
+Then make sure you install the dependencies:
+
+```sh
+npm install
+```
+
+Finally run or build the app
+
+```sh
+ionic serve
+```
+
+```sh
+ionic build
+```
+
 ## Motivation
 
 During my latest course about Ionic 4 with Platzi, I created this awesome App that group all the main functionalities that an Ionic 4 application should have, I have use sign in and sign up authentication using only the LocalStorage, I have used Angular Maps for the sports mode and GPS tracking.
