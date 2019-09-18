@@ -3,3 +3,11 @@ node_js: — "11.0.0"
 before_script: npm install -g ionic
 install: npm install
 script: ionic build --prod
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: 159198e5c29d60d7e2e5e7f8be4129b33327234b
+  keep-history: true
+  on:
+    branch: master
+  local_dir: www
