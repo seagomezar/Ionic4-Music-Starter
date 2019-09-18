@@ -9,6 +9,30 @@
 ![](https://img.shields.io/github/release/seagomezar/Ionic4-Music-Starter)
 ![](https://img.shields.io/github/issues/seagomezar/Ionic4-Music-Starter)
 
-[TOCM]
+## How to use this starter?
 
-[TOC]
+If you only want to use this starter, you can download from [Ionic Starter Page](https://market.ionicframework.com/starters/ionic4-music-starter) but please please 🙏 please give me an start in the repo, I would love it and you will motivate me to keep improving this starter, any advice or suggestion is very welecome throught comments or Pull Requests. ❤️
+
+## Motivation
+
+During my latest course about Ionic 4 with Platzi, I created this awesome App that group all the main functionalities that an Ionic 4 application should have, I have use sign in and sign up authentication using only the LocalStorage, I have used Angular Maps for the sports mode and GPS tracking.
+
+## Features
+
+1. GPS and Camera plugins implemented and used.
+2. Angular Navigation.
+3. Tabs with Side Menu combined.
+4. Sign In and Sign Up from LocalStorage
+5. Easy connection with the Backend thanks to @platzi
+
+## Screenshots
+
+![](https://s3.amazonaws.com/ionic-marketplace/ionic4-music-starter/screenshot_1.png)
+![](https://s3.amazonaws.com/ionic-marketplace/ionic4-music-starter/screenshot_2.png)
+![](https://s3.amazonaws.com/ionic-marketplace/ionic4-music-starter/screenshot_3.png)
+![](https://s3.amazonaws.com/ionic-marketplace/ionic4-music-starter/screenshot_4.png)
+
+## Contributing
+
+Thanks for your interest in contributing! There are many ways to contribute to this project.
+Please rise a Bug or a PR to get started.
