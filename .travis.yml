@@ -5,6 +5,3 @@ install:
  - npm install
  script:
  — ionic build --prod
-branches:
- only:
- — master
