@@ -1,8 +1,8 @@
 {
-  "name": "platzi-music-preparation",
-  "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "name": "ionic4-music-starter",
+  "version": "1.0.0",
+  "author": "Sebastian Gomez <seagomezar@gmail.com> (https://sebastian-gomez.com/)",
+  "homepage": "https://seagomezar.github.io/Ionic4-Music-Starter/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -62,5 +62,6 @@
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
   },
-  "description": "An Ionic project"
+  "description": "Ionic 4 Music Starter with authentication in localstorage, custom music reproductor",
+  "license": "SEE LICENSE IN LICENCE.md"
 }
