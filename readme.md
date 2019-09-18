@@ -37,6 +37,8 @@ ionic serve
 ionic build
 ```
 
+NOTE: Remember to change your Google Maps API Key in your environment.ts file!
+
 ## Motivation
 
 During my latest course about Ionic 4 with Platzi, I created this awesome App that group all the main functionalities that an Ionic 4 application should have, I have use sign in and sign up authentication using only the LocalStorage, I have used Angular Maps for the sports mode and GPS tracking.
